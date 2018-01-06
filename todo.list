@@ -1,0 +1,7 @@
+### Batch Watermark on Images
+
+- [x] Pass opacity, fontsize arguments instead of hard-coded values
+- [ ] Set default font size based on image size
+- [ ] Rewrite README in Markdown style
+- [ ] Fix text placement based on its length
+- [ ] Develop a GUI ... eventually.

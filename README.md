@@ -11,11 +11,3 @@ python watermark.py
 For more options run:
 
 python watermark.py -h 
-
------------
-
-TO DO:
-
-pass values as arguments
-
-fix the watermark placement based on text length
