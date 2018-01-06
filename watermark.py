@@ -1,5 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont
 import os
+import argparse
 
 dirname = "./output-dir/"
 filepath = "./images-dir/"
@@ -48,13 +49,18 @@ def watermarking(filename,watermark_text,fontsize, opacity, rotation_angle):
 if __name__ == '__main__':
 
 
-	opacity = 50
-	fontsize = 100
-	watermark_text = "Euro Tile Inc."
-	rotation_angle = 15
+	parser = argparse.ArgumentParser(description="Places watermarks in batch on images located under image-dir")
 	
+
+	parser.add_argument("--text", help="Set watermark text.", nargs='?', const="YOUR TEXT!", default="YOUR TEXT")
+	parser.add_argument("--opacity", help="Set opacity.", nargs='?', const=30,  type=int, default=30)
+	parser.add_argument("--fontsize", help="Set text font size.", nargs='?', const=100, type=int, default="100")
+	parser.add_argument("--angle", help="Set rotation angle.", nargs='?', const=15, type=int, default="15")
+
+	args = parser.parse_args()
+
 	# Place watermark for all files in the directory listed in filepath
 	for filename in os.listdir(filepath):
         	if filename.lower().endswith('.jpg') or filename.lower().endswith('.png'):	
-			watermarking(filename,watermark_text, fontsize, opacity, rotation_angle)
+			watermarking(filename, args.text, args.fontsize, args.opacity, args.angle)
 

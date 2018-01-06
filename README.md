@@ -5,8 +5,17 @@ Set the values for opacity, fontsize, font-type, watermark text inside the file 
 Also set the directory path for where the new watermarked images should be saved.
 
 Run the code with the following:
-pythong watermark.py
+
+python watermark.py
+
+For more options run:
+
+python watermark.py -h 
+
+-----------
 
 TO DO:
+
 pass values as arguments
+
 fix the watermark placement based on text length
